@@ -9,7 +9,6 @@
         <webroots>
           <root url="file://$MODULE_DIR$/web" relative="/" />
         </webroots>
-        <sourceRoots />
       </configuration>
     </facet>
   </component>
@@ -19,8 +18,12 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/web" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/web/WEB-INF/lib" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/src/dao" />
+      <excludeFolder url="file://$MODULE_DIR$/src/entity" />
+      <excludeFolder url="file://$MODULE_DIR$/src/service" />
       <excludeFolder url="file://$MODULE_DIR$/src/servlet2" />
       <excludeFolder url="file://$MODULE_DIR$/src/test" />
+      <excludeFolder url="file://$MODULE_DIR$/src/util" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -36,5 +39,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.26" level="application_server_libraries" />
+    <orderEntry type="library" name="src" level="project" />
   </component>
 </module>

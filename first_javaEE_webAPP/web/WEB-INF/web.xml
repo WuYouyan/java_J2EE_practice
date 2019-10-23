@@ -3,24 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-<!--    <servlet>-->
-<!--        <servlet-name>MyServlet</servlet-name>-->
-<!--        <servlet-class>servlet.MyServlet</servlet-class>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>MyServlet</servlet-name>-->
-<!--        <url-pattern>/MyServlet</url-pattern>-->
-<!--    </servlet-mapping>-->
-
-<!--    <servlet>-->
-<!--        <servlet-name>Servlet2</servlet-name>-->
-<!--        <servlet-class>servlet.Servlet2</servlet-class>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>Servlet2</servlet-name>-->
-<!--        <url-pattern>/Servlet2</url-pattern>-->
-<!--    </servlet-mapping>-->
-
     <servlet>
         <servlet-name>MyFirstServlet</servlet-name>
         <servlet-class>servlet.MyFirstServlet</servlet-class>
@@ -29,5 +11,13 @@
         <servlet-name>MyFirstServlet</servlet-name>
         <url-pattern>/MyFirstServlet</url-pattern>
     </servlet-mapping>
-
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+<!--        <url-pattern>/mytest/LoginServlet</url-pattern> 则表单中action 应该为/mytest/LoginServlet 此为在浏览器地址栏显示的url-->
+        <url-pattern>/LoginServlet</url-pattern><!--  表单中为 LoginServlet  -->
+    </servlet-mapping>
 </web-app>

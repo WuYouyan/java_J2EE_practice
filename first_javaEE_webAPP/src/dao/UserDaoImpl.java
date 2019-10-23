@@ -11,22 +11,27 @@ import java.sql.SQLException;
 public class UserDaoImpl implements IUserDao {
     private QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
 
-
     @Override
     public int addUser(User user) throws SQLException {
-        String sql = "insert into t_user(name,pwd) values(?,?)";
+        String sql = "insert into students(name,password) values (?,?)";
         return qr.update(sql, new Object[]{user.getName(), user.getPwd()});
     }
 
     @Override
     public int deleteUserByName(String name) throws SQLException {
-        String sql = "delete from t_user where name=?";
+        String sql = "delete from students where name=?";
         return qr.update(sql, new Object[]{name});
     }
 
     @Override
+    public int updateUserPassword(User user) throws  SQLException{ // Upate password
+        String sql = "update students set password=? where name=?";
+        return qr.update(sql, new Object[]{user.getPwd(),user.getName()});
+    }
+
+    @Override
     public User queryUser(User user) throws SQLException {
-        String sql="select name,pwd from t_user where name=? and pwd=?";
+        String sql="select name,password from students where name=? and password=?";
         return qr.query(sql,new Object[]{user.getName(),user.getPwd()}, new BeanHandler<User>(User.class) );
     }
 

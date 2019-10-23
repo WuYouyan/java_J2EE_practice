@@ -10,5 +10,7 @@ public interface IUserDao {
 
     public int deleteUserByName(String name) throws SQLException;
 
+    public int updateUserPassword(User user) throws  SQLException;
+
     public  User queryUser(User user) throws SQLException;
 }

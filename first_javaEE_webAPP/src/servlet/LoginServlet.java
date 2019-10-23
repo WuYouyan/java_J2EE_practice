@@ -1,8 +1,8 @@
 package servlet;
 
-import service.IUserService;
-import service.UserServiceImpl;
-import  entity.User;
+//import service.UserServiceImpl;
+//import service.IUserService;
+//import entity.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException{
-        message =  "Hello world, this message is from LoginServlet!";
+        message =  "Hello, this message is from LoginServlet!";
     }
 
     @Override
@@ -36,19 +36,21 @@ public class LoginServlet extends HttpServlet {
 
         //调用HttpServletRequest的api方法来获取客户端传过来的数据
         String name = request.getParameter("name");
-        String password = request.getParameter("");
-
+        String password = request.getParameter("password");
+        PrintWriter out = response.getWriter();
+        out.println(message+ "<br>" +" name: "+name+"<br> pwd :"+ password);
         // 创建业务层对象
-        IsuerService us = new UserServiceImpl();
-        User result = us.queryUser(new User(name,password));
-        if(result != null){
-            pw.println("<script>javascript:alert('登录成功')</script>");
-            response.sendRedirect(login.html);
-        }
-        else{
-            pw.println("<script>javascript:alert('用户名或密码错误')</script>");
-            response.sendRedirect(login.html);
-        }
+//        IUserService us = new UserServiceImpl();
+//        User result = us.queryUser(new User(name,password));
+//        if(result != null){
+//            pw.println("<script>javascript:alert('登录成功')</script>");
+//
+//            response.sendRedirect(request.getContextPath()+"login.html");
+//        }
+//        else{
+//            pw.println("<script>javascript:alert('用户名或密码错误')</script>");
+//            response.sendRedirect(request.getContextPath()+"login.html");
+//        }
     }
     @Override
     public  void destroy(){

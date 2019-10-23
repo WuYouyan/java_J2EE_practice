@@ -28,6 +28,17 @@ public class UserServiceImpl implements IUserService {
         }
         return 0;
     }
+    @Override
+    public int updateUserPassword(User user){
+        try{
+            return userDao.updateUserPassword(user);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+
 
     @Override
     public User queryUser(User user) {
