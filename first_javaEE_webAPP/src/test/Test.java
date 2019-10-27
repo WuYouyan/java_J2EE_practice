@@ -1,3 +1,4 @@
+package test;
 import entity.User;
 import service.IUserService;
 import service.UserServiceImpl;
